@@ -21,6 +21,10 @@ private:
      int m_count;
      QTimer m_timer;
      Gpio m_gpio;
+     QLCDNumber* m_lcd = nullptr;
+     int m_number;
+
+     void refreshLED();
 
 };
 
