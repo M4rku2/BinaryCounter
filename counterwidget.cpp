@@ -37,12 +37,12 @@ void CounterWidget::updateCounter()
 
 
         if(m_gpio.isActivated(BUTTONS[2]))
-            m_number = (m_number + 1) & 0xF;
+            m_number = (m_number + 1) & 15;
 
-        if(m_gpio.isActivated(BUTTONS[0]))
-            m_number = (m_number - 1) & 0xF;
+        else if(m_gpio.isActivated(BUTTONS[0]))
+            m_number = (m_number - 1) & 15;
 
-        if(m_gpio.isActivated(BUTTONS[1]))
+        else(m_gpio.isActivated(BUTTONS[1]));
             m_number = 0;
 
         m_LCD->display(m_number);
